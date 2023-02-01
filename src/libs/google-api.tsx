@@ -1,5 +1,3 @@
-import jwt_decode from 'jwt-decode';
-
 const SRC_GSI_CLIENT = 'https://accounts.google.com/gsi/client';
 const SRC_GAPI_CLIENT = 'https://apis.google.com/js/api.js';
 const CLIENT_ID = '346528863504-v1dbcc72bordt67kh10fmmi66uqo6tv7.apps.googleusercontent.com';
@@ -147,7 +145,7 @@ const googleapi = {
             return;
         }
         const range = response.result;
-        if (!range || !range.values || range.values.length == 0) {
+        if (!range || !range.values || range.values.length === 0) {
             // document.getElementById('content').innerText = 'No values found.';
             return;
         }

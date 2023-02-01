@@ -13,14 +13,6 @@ function App() {
     // googleapi.setOnLoginCallback(user => console.log("User logged in", user));
   }, [])
 
-  function onLogin(user: any) {
-    console.log("Login with:", user);
-  }
-
-  function onLogout() {
-    console.log("Logout");
-  }
-
   return (
     <div className="App">
       <div ref={googleButton}></div>
