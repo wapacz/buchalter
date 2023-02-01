@@ -1,7 +1,17 @@
+import { useEffect, useRef } from 'react';
 import './App.css';
-import GoogleAuth from './components/GoogleAuth';
+import googleapi from './libs/google-api';
 
 function App() {
+
+  const googleButton = useRef(null);
+
+  useEffect(() => {
+    googleapi.init(googleButton.current).then(() => {
+      googleapi.authenticate(user => console.log("User logged in", user));
+    });
+    // googleapi.setOnLoginCallback(user => console.log("User logged in", user));
+  }, [])
 
   function onLogin(user: any) {
     console.log("Login with:", user);
@@ -13,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <GoogleAuth onLogin={onLogin} onLogout={onLogout} />
+      <div ref={googleButton}></div>
     </div>
   );
 }

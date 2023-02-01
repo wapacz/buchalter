@@ -95,6 +95,7 @@ const google: {
                 hint: string
                 callback: Function<{ successful: boolean; error: string }>
             }>
-        }
+        },
+        oauth2: any
     }
 };
